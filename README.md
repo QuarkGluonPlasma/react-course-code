@@ -9,3 +9,5 @@
 [迷你 Calendar](./mini-calendar-test/)
 
 [Calendar](./calendar-component/)
+
+[快速掌握 storybook](./sb-test/)
