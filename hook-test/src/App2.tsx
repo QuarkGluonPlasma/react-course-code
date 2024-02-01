@@ -16,7 +16,7 @@ function App() {
     console.log('xxx');
     queryData().then(data => {
       setNum(data);
-    })
+    }, [])
   }, [1, 2, 3, 'xxx', Date.now()]);
 
   return (
