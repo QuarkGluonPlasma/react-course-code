@@ -1,0 +1,31 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.page > div {
+  touch-action: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 50px #000;
+}
+

@@ -24,6 +24,8 @@
 
 [用 react-spring 做动画](./react-spring-test)
 
+[结合 use-gesture 手势库做交互动画](./use-gesture-test/)
+
 [手写一个 Zustand](./zustand-test/)
 
 
