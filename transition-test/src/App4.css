@@ -1,0 +1,54 @@
+.item-box {
+    width: 300px;
+    margin: 20px auto;
+  }
+  
+  .item {
+    margin: 4px 0;
+    padding: 10px 0;
+    border-radius: 4px;
+    background: lightblue;
+  }
+  
+  .del-btn {
+    padding: 0 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .enter {
+    opacity: 0;
+    transform: translateX(-100%);
+    background: lightblue;
+  }
+  .enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+    background: lightblue;
+    transition: all 1s ease;
+  
+  }
+  .enter-done {
+  }
+  .exit {
+    opacity: 1;
+    transform: translateX(0%);
+    background: red;
+  }
+  .exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    background: red;
+    transition: all 1s ease;
+  }
+  
+  .btn {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: fit-content;
+    cursor: pointer;
+    margin: 20px auto;
+  }
