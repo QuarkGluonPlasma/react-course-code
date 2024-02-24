@@ -20,6 +20,8 @@
 
 [Space 组件](./space-component/)
 
+[Icon 组件](./icon-component/)
+
 [React.Children 和它的两种替代方案](./children-test/)
 
 [用 react-spring 做动画](./react-spring-test)
