@@ -2,3 +2,5 @@
 
 *-lock.json
 yarn-*
+*-lock.yaml
+*.lock
