@@ -1,0 +1,14 @@
+.card {
+  width: 200px;
+  line-height: 60px;
+  padding: 0 20px;
+  border: 1px solid #000;
+  background: skyblue;
+  margin: 10px;
+  cursor: move;
+}
+
+.dragging {
+  border-style: dashed;
+  background: #fff;
+}
