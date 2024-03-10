@@ -32,6 +32,8 @@
 
 [快速掌握 Tailwind：最流行的原子化 CSS 框架](./tailwind-test/)
 
+[Message 组件](./message-component/)
+
 [手写一个 Zustand](./zustand-test/)
 
 [基于 react-dnd 实现拖拽排序](./react-dnd-test/)
