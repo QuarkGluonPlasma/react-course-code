@@ -32,6 +32,8 @@
 
 [快速掌握 Tailwind：最流行的原子化 CSS 框架](./tailwind-test/)
 
+[Popover 组件](./popover-component/)
+
 [Message 组件](./message-component/)
 
 [手写一个 Zustand](./zustand-test/)
