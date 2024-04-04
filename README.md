@@ -38,6 +38,8 @@
 
 [基于 React Router 实现 keepalive](./router-keepalive/)
 
+[context 的性能缺点和解决方案](./context-trap/)
+
 [手写一个 Zustand](./zustand-test/)
 
 [基于 react-dnd 实现拖拽排序](./react-dnd-test/)
