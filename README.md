@@ -38,6 +38,8 @@
 
 [Upload 组件](./upload-component/)
 
+[OnBoarding 组件](./onboarding-component/)
+
 [基于 React Router 实现 keepalive](./router-keepalive/)
 
 [context 的性能缺点和解决方案](./context-trap/)

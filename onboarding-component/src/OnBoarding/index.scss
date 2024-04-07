@@ -1,0 +1,29 @@
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    z-index: 999;
+
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: rgba(0, 0, 0, 0.6);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.onboarding-operation {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+
+    .back {
+        margin-right: 12px;
+        min-width: 80px;
+    }
+
+    .forward {
+        min-width: 80px;
+    }
+}
