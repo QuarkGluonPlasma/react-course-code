@@ -40,6 +40,8 @@
 
 [Upload 组件](./upload-component/)
 
+[Form 组件](./form-component/)
+
 [OnBoarding 组件](./onboarding-component/)
 
 [基于 React Router 实现 keepalive](./router-keepalive/)
