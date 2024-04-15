@@ -34,6 +34,8 @@
 
 [快速掌握 Tailwind：最流行的原子化 CSS 框架](./tailwind-test/)
 
+[5 种 Observer](./observer/)
+
 [Popover 组件](./popover-component/)
 
 [Message 组件](./message-component/)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+         #box {
+            width: 100px;
+            height: 100px;
+            background: blue;
+
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"><button>光</button></div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        const mutationObserver = new MutationObserver((mutationsList) => {
+            console.log(mutationsList)
+        });
+
+        mutationObserver.observe(box, {
+            attributes: true,
+            childList: true
+        });
+
+        setTimeout(() => {
+            box.style.background = 'red';
+        },2000);
+
+        setTimeout(() => {
+            const dom = document.createElement('button');
+            dom.textContent = '东东东';
+            box.appendChild(dom);
+        },3000);
+
+        setTimeout(() => {
+           document.querySelectorAll('button')[0].remove();
+        },5000);
+    </script>
+</body>
+</html>

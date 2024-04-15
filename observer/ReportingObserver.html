@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    // deprecation  和 intervention 不好模拟就不模拟了，intervention 可以查看 https://chromestatus.com/features#intervention 
+    const reportingObserver = new ReportingObserver((reports, observer) => {
+        for (const report of reports) {
+            console.log(report.body)
+        }
+    }, {types: ['intervention', 'deprecation']});
+
+    reportingObserver.observe();
+</script>
+</body>
+</html>
