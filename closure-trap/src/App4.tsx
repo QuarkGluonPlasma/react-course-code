@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useLayoutEffect } from 'react';
 
 function useInterval(fn: Function, time: number) {
     const ref = useRef(fn);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         ref.current = fn;
     });
 
