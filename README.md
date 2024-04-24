@@ -36,6 +36,8 @@
 
 [5 种 Observer](./observer/)
 
+[Watermark 防删除水印组件](./watermark-component/)
+
 [自定义 hook 练习](./react-use-hook/)
 
 [自定义 hook 练习（二）](./ahooks-hook/)
