@@ -34,11 +34,8 @@ const Form= forwardRef<FormRefApi, FormProps>((props: FormProps, ref) => {
             getFieldsValue() {
                 return values;
             },
-            setFieldsValue(values) {
-                for(let [key, value] of Object.entries(values)) {
-                    values[key] = value
-                }
-                setValues(values);
+            setFieldsValue(fieldValues) {
+                setValues({...values, ...fieldValues});
             }
         }
     }, []);
