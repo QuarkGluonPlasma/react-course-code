@@ -10,7 +10,7 @@
 
 [迷你 Calendar](./mini-calendar-test/)
 
-[Calendar](./calendar-component/)
+[Calendar 日历组件](./calendar-component/)
 
 [快速掌握 storybook](./sb-test/)
 
@@ -18,11 +18,11 @@
 
 [Suspense 和 ErrorBoundary](./suspense-error-boundary/)
 
-[ColorPicker 组件](./color-picker-component/)
+[ColorPicker 颜色选择器组件](./color-picker-component/)
 
-[Space 组件](./space-component/)
+[Space 间距组件](./space-component/)
 
-[Icon 组件](./icon-component/)
+[Icon 图标组件](./icon-component/)
 
 [React.Children 和它的两种替代方案](./children-test/)
 
@@ -42,15 +42,15 @@
 
 [自定义 hook 练习（二）](./ahooks-hook/)
 
-[Popover 组件](./popover-component/)
+[Popover 弹窗组件](./popover-component/)
 
-[Message 组件](./message-component/)
+[Message 消息组件](./message-component/)
 
-[Upload 组件](./upload-component/)
+[Upload 上传组件](./upload-component/)
 
-[Form 组件](./form-component/)
+[Form 表单组件](./form-component/)
 
-[OnBoarding 组件](./onboarding-component/)
+[OnBoarding 漫游式引导组件](./onboarding-component/)
 
 [基于 React Router 实现 keepalive](./router-keepalive/)
 
