@@ -12,6 +12,8 @@
 
 [Calendar 日历组件](./calendar-component/)
 
+[受控模式 vs 非受控模式](./controlled-and-uncontrolled/)
+
 [快速掌握 storybook](./sb-test/)
 
 [react 组件和 hook 的单测](./react-unit-test/)
