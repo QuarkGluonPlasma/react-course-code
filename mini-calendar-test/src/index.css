@@ -23,7 +23,7 @@
   line-height: 30px;
 }
 
-.day:hover {
+.day:hover, .selected {
   background-color: #ccc;
   cursor: pointer;
 }

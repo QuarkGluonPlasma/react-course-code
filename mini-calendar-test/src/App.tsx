@@ -1,8 +1,10 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import './index.css';
+import { useControllableValue } from 'ahooks';
 
 interface CalendarProps {
   value?: Date,
+  defaultValue?: Date,
   onChange?: (date: Date) => void
 }
 
@@ -13,11 +15,14 @@ interface CalendarRef {
 
 const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProps> = (props, ref) => {
   const {
-    value = new Date(),
+    value,
+    defaultValue,
     onChange,
   } = props;
 
-  const [date, setDate] = useState(value);
+  const [date, setDate] =  useControllableValue(props,{
+    defaultValue: new Date()
+  });
 
   useImperativeHandle(ref, () => {
     return {
@@ -61,7 +66,7 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
     return new Date(year, month, 1).getDay();
   };
 
-  const renderDays = () => {
+  const renderDates = () => {
     const days = [];
 
     const daysCount = daysOfMonth(date.getFullYear(), date.getMonth());
@@ -72,11 +77,15 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
     }
 
     for (let i = 1; i <= daysCount; i++) {
-      const clickHandler = onChange?.bind(null, new Date(date.getFullYear(), date.getMonth(), i));
+      const clickHandler = () => {
+        const curDate = new Date(date.getFullYear(), date.getMonth(), i);
+        setDate(curDate);
+      }
+    
       if(i === date.getDate()) {
-        days.push(<div key={i} className="day selected" onClick={clickHandler}>{i}</div>);  
+        days.push(<div key={i} className="day selected" onClick={() => clickHandler()}>{i}</div>);  
       } else {
-        days.push(<div key={i} className="day" onClick={clickHandler}>{i}</div>);
+        days.push(<div key={i} className="day" onClick={() => clickHandler()}>{i}</div>);
       }
     }
 
@@ -98,7 +107,7 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
         <div className="day">四</div>
         <div className="day">五</div>
         <div className="day">六</div>
-        {renderDays()}
+        {renderDates()}
       </div>
     </div>
   );
@@ -107,21 +116,17 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
 const Calendar = React.forwardRef(InternalCalendar);
 
 function Test() {
-  const calendarRef = useRef<CalendarRef>(null);
+  // const [date, setDate] = useState(new Date());
 
-  useEffect(() => {
-    console.log(calendarRef.current?.getDate().toLocaleDateString());
+  // return <Calendar value={date} onChange={(newDate) => {
+  //     setDate(newDate);
+  //     alert(newDate.toLocaleDateString());
+  // }}></Calendar>
 
-    setTimeout(() => {
-      calendarRef.current?.setDate(new Date(2024, 3, 1));
-    }, 3000);
-  }, []);
+  return <Calendar defaultValue={new Date()} onChange={(newDate) => {
+      alert(newDate.toLocaleDateString());
+  }}></Calendar>
 
-  return <div>
-    {/* <Calendar value={new Date('2023-3-1')} onChange={(date: Date) => {
-        alert(date.toLocaleDateString());
-    }}></Calendar> */}
-    <Calendar ref={calendarRef} value={new Date('2024-8-15')}></Calendar>
-  </div>
 }
+
 export default Test;
