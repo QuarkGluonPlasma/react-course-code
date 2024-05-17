@@ -1,4 +1,5 @@
 import {  SetStateAction, useCallback, useEffect, useRef, useState } from "react"
+import dayjs from 'dayjs'
 
 function useMergeState<T>(
   defaultStateValue: T,
@@ -37,13 +38,13 @@ function useMergeState<T>(
   } 
 
   const setState = useCallback((value: SetStateAction<T>) => {
-    let res = isFunction(value) ? value(stateValue) : value
+    let res = isFunction(value) ? value(mergedValue) : value
 
     if (propsValue === undefined) {
       setStateValue(res);
     }
     onChange?.(res);
-  }, [stateValue]);
+  }, [stateValue,propsValue]);
 
   return [mergedValue, setState]
 }
@@ -72,6 +73,13 @@ function Calendar(props: CalendarProps) {
     <div onClick={()=> {setValue(new Date('2024-5-1'))}}>2023-5-1</div>
     <div onClick={()=> {setValue(new Date('2024-5-2'))}}>2023-5-2</div>
     <div onClick={()=> {setValue(new Date('2024-5-3'))}}>2023-5-3</div>
+    <div onClick={()=> {
+                setValue(date=>{
+                    console.log(date?.toLocaleDateString());
+                    let currentDayjs=dayjs(date).add(1,'month');
+                    return currentDayjs.toDate();
+                })
+            }}>functions</div>
   </div>
 }
 
