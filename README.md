@@ -60,6 +60,8 @@
 
 [手写一个 Zustand](./zustand-test/)
 
+[reat-intl 实现国际化](./react-intl-test/)
+
 [基于 react-dnd 实现拖拽排序](./react-dnd-test/)
 
 [拖拽版 TodoList](./todolist-drag/)
