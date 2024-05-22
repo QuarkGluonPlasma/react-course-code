@@ -40,6 +40,8 @@
 
 [Watermark 防删除水印组件](./watermark-component/)
 
+[手写 react-lazyload](./react-lazyload-test/)
+
 [自定义 hook 练习](./react-use-hook/)
 
 [自定义 hook 练习（二）](./ahooks-hook/)
