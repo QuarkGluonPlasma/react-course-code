@@ -48,6 +48,8 @@
 
 [Popover 弹窗组件](./popover-component/)
 
+[click-to-react-component 快速定位组件源码](./locate-code-test/)
+
 [Message 消息组件](./message-component/)
 
 [Upload 上传组件](./upload-component/)
