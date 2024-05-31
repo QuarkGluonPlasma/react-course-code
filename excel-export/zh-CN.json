@@ -1,0 +1,8 @@
+{
+  "inputYourPassword": "请输入你的密码！",
+  "inputYourUsername": "请输入你的用户名！",
+  "password": "密码",
+  "rememberMe": "记住我333",
+  "submit": "提交",
+  "username": "用户名 <bbb>{name}</bbb>"
+}

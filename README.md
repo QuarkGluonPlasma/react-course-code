@@ -66,6 +66,8 @@
 
 [reat-intl 实现国际化](./react-intl-test/)
 
+[通过 exceljs 和 google sheet 实现国际化资源包导入导出](./excel-export/)
+
 [基于 react-dnd 实现拖拽排序](./react-dnd-test/)
 
 [拖拽版 TodoList](./todolist-drag/)

@@ -1,0 +1,7 @@
+Message ID,Default Message,Description,zh-CN,en-US
+inputYourPassword,请输入密码！,登录页的密码为空的提示,请输入你的密码！,Please input your password!
+inputYourUsername,请输入用户名！,登录页的用户名为空的提示,请输入你的用户名！,Please input your username!
+password,密码,这是登录的密码,密码,Password
+rememberMe,记住我,登录页的记住我复选框,记住我333,Remember Me
+submit,提交,登录页的提交按钮,提交,Submit
+username,用户名,这是登录的用户名,用户名 <bbb>{name}</bbb>,Username <bbb>{name}</bbb>
