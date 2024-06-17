@@ -52,6 +52,8 @@
 
 [快速掌握 styled-components](./styled-components-test/)
 
+[react-spring 实现滑入滑出转场动画](./slide-in-out-transition/)
+
 [Message 消息组件](./message-component/)
 
 [Upload 上传组件](./upload-component/)
