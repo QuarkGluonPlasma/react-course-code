@@ -1,23 +1,27 @@
 const { render, useState, useEffect } = window.MiniReact;
 
-function App() {
-  const [count,setCount] = useState(0)
- 
-//   function handleClick(){
-//     setCount((count)=> count + 1)
-//   }
+function Counter(props) {
+  const {
+    initialNum,
+    interval
+  } = props;
+
+  const [count, setCount] = useState(initialNum)
 
   useEffect(() => {
     const timer = setInterval(() => {
         setCount((count)=> count + 1)
-    }, 1000);
+    }, interval);
     return () => clearTimeout(timer);
   }, []);
 
   return <div>
     <p>{count}</p>
-    {/* <button onClick={handleClick}>加一</button> */}
   </div>;
+}
+
+function App() {
+  return <Counter interval={1000} initialNum={10}></Counter>
 }
 
 render(<App/>, document.getElementById('root'));
