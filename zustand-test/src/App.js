@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { create } from 'zustand'
 
 function logMiddleware(func) {
@@ -23,9 +24,11 @@ export default function App() {
   const updateAaa = useXxxStore((state) => state.updateAaa)
   const aaa = useXxxStore((state) => state.aaa)
 
-  useXxxStore.subscribe((state) => {
-    console.log(useXxxStore.getState());
-  })
+  useEffect(() => {
+    useXxxStore.subscribe((state) => {
+      console.log(useXxxStore.getState());
+    })
+  }, []);
 
   return (
     <div>
