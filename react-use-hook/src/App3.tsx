@@ -9,7 +9,7 @@ const App = () => {
         setTimeout(() => {
             setNum(1);
         }, 1000);
-    });
+    }, []);
 
     return <div>{ isMounted() ? 'mounted' : 'pending' }</div>
 };
