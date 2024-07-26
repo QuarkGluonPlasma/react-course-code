@@ -5,6 +5,7 @@ import CodeEditor from "./components/CodeEditor";
 import Preview from "./components/Preview";
 
 export default function ReactPlayground() {
+
     return <div style={{height: '100vh'}}>
         <Header/>
         <Allotment defaultSizes={[100, 100]}>
