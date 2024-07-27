@@ -16,7 +16,6 @@ export default function Preview() {
     }, [files]);
 
     const getIframeUrl = () => {
-        console.log(files);
         const res = iframeRaw.replace(
             '<script type="importmap"></script>', 
             `<script type="importmap">${
