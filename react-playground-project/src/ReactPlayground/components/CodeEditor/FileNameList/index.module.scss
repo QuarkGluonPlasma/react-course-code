@@ -8,8 +8,8 @@
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
 
-    color: #444;
-    background-color: #fff;
+    color: var(--text);
+    background-color: var(--bg);
 
     &::-webkit-scrollbar {
         height: 1px;
