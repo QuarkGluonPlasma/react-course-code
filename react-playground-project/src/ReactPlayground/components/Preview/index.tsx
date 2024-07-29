@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { PlaygroundContext } from "../../PlaygroundContext"
 import Editor from "../CodeEditor/Editor";
-import { compile } from "./compiler";
 import iframeRaw from './iframe.html?raw'
 import { IMPORT_MAP_FILE_NAME } from "../../files";
 import { Message } from "../Message";
+import CompilerWorker from './compiler.worker?worker'
+import { debounce } from "lodash-es";
 
 interface MessageData {
     data: {
@@ -17,11 +18,27 @@ export default function Preview() {
 
     const { files} = useContext(PlaygroundContext)
     const [compiledCode, setCompiledCode] = useState('')
+    const [error, setError] = useState('')
+
+    const compilerWorkerRef = useRef<Worker>();
 
     useEffect(() => {
-        const res = compile(files);
-        setCompiledCode(res);
-    }, [files]);
+        if(!compilerWorkerRef.current) {
+            compilerWorkerRef.current = new CompilerWorker();
+            compilerWorkerRef.current.addEventListener('message', ({data}) => {
+                console.log('worker', data);
+                if(data.type === 'COMPILED_CODE') {
+                    setCompiledCode(data.data);
+                } else {
+                    // console.log('error', data);
+                }
+            })
+        }
+    }, []);
+
+    useEffect(debounce(() => {
+        compilerWorkerRef.current?.postMessage(files)
+    }, 500), [files]);
 
     const getIframeUrl = () => {
         const res = iframeRaw.replace(
@@ -41,8 +58,6 @@ export default function Preview() {
     }, [files[IMPORT_MAP_FILE_NAME].value, compiledCode]);
 
     const [iframeUrl, setIframeUrl] = useState(getIframeUrl());
-
-    const [error, setError] = useState('')
 
     const handleMessage = (msg: MessageData) => {
         const { type, message } = msg.data
