@@ -1,28 +1,11 @@
-import React, { useEffect } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import { useComponentConfigStore } from "../../stores/component-config";
 import { Component, useComponetsStore } from "../../stores/components"
+import HoverMask from "../HoverMask";
 
 export function EditArea() {
-    const { components, addComponent } = useComponetsStore();
+    const { components } = useComponetsStore();
     const { componentConfig } = useComponentConfigStore();
-
-    // useEffect(()=> {
-    //     addComponent({
-    //         id: 222,
-    //         name: 'Container',
-    //         props: {},
-    //         children: []
-    //     }, 1);
-
-    //     addComponent({
-    //         id: 333,
-    //         name: 'Button',
-    //         props: {
-    //             text: '无敌'
-    //         },
-    //         children: []
-    //     }, 222);
-    // }, []);
 
     function renderComponents(components: Component[]): React.ReactNode {
         return components.map((component: Component) => {
@@ -46,10 +29,33 @@ export function EditArea() {
         })
     }
 
-    return <div className="h-[100%]">
-        {/* <pre>
-            {JSON.stringify(components, null, 2)}
-        </pre> */}
+    const [hoverComponentId, setHoverComponentId] = useState<number>();
+
+    const handleMouseOver: MouseEventHandler = (e)  => {
+        const path = e.nativeEvent.composedPath();
+
+        for (let i = 0; i < path.length; i += 1) {
+            const ele = path[i] as HTMLElement;
+
+            const componentId = ele.dataset?.componentId;
+            if (componentId) {
+                setHoverComponentId(+componentId);
+                return;
+            }
+        }
+    }
+
+    return <div className="h-[100%] edit-area" onMouseOver={handleMouseOver} onMouseLeave={() => {
+        setHoverComponentId(undefined);
+    }}>
         {renderComponents(components)}
+        {hoverComponentId && (
+            <HoverMask
+                portalWrapperClassName='portal-wrapper'
+                containerClassName='edit-area'
+                componentId={hoverComponentId}
+            />
+        )}
+        <div className="portal-wrapper"></div>
     </div>
 }
