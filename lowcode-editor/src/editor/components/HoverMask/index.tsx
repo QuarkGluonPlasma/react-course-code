@@ -29,6 +29,10 @@ function HoverMask({ containerClassName, portalWrapperClassName, componentId }: 
     updatePosition();
   }, [componentId]);
 
+  useEffect(() => {
+    updatePosition();
+  }, [components]);
+
   function updatePosition() {
     if (!componentId) return;
 
@@ -104,7 +108,7 @@ function HoverMask({ containerClassName, portalWrapperClassName, componentId }: 
               whiteSpace: 'nowrap',
             }}
           >
-            {curComponent?.name}
+            {curComponent?.desc}
           </div>
         </div>
     </>
