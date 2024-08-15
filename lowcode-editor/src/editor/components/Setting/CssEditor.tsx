@@ -46,7 +46,6 @@ export default function CssEditor(props: Props) {
                   verticalScrollbarSize: 6,
                   horizontalScrollbarSize: 6,
                 },
-                lineNumbers: 'off',
                 ...options
             }
         }
