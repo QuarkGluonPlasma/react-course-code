@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.monaco-editor .suggestions-widget {
+    z-index: 10000;
+}
