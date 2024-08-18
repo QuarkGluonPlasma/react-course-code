@@ -17,7 +17,7 @@ export default function ReactPlayground() {
         {
             mode === 'edit' 
                 ? <Allotment>
-                    <Allotment.Pane preferredSize={240} maxSize={300} minSize={200}>
+                    <Allotment.Pane preferredSize={240} maxSize={400} minSize={200}>
                         <MaterialWrapper />
                     </Allotment.Pane>
                     <Allotment.Pane>
