@@ -61,6 +61,8 @@ export function ComponentStyle() {
   }
 
   const handleEditorChange = debounce((value) => {
+    setCss(value);
+
     let css: Record<string, any> = {};
 
     try {
