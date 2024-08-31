@@ -4,11 +4,13 @@ import { ColorType } from "./interface";
 import { Color } from "./color";
 import Palette from "./Palette";
 import './index.scss';
+import { useControllableValue } from "ahooks";
 
 export interface ColorPickerProps {
     className?: string;
     style?: CSSProperties;
     value?: ColorType;
+    defaultValue?: ColorType;
     onChange?: (color: Color) => void;
 }
 
@@ -21,12 +23,7 @@ function ColorPickerPanel(props: ColorPickerProps) {
         onChange
     } = props;
 
-    const [colorValue, setColorValue] = useState<Color>(() => {
-        if (value instanceof Color) {
-            return value;
-        }
-        return new Color(value);
-    });
+    const [colorValue, setColorValue] = useControllableValue<Color>(props);
 
     const classNames = cs("color-picker", className);
 
