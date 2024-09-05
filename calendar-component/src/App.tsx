@@ -1,10 +1,15 @@
 import dayjs from 'dayjs';
 import Calendar from './Calendar';
+import { useState } from 'react';
 
 function App() {
+  const [value, setValue] =  useState(dayjs('2023-11-08'));
+
   return (
     <div className="App">
-      <Calendar value={dayjs('2023-11-08')}></Calendar>
+      <Calendar value={value} onChange={(val) => {
+        setValue(val)
+      }}></Calendar>
     </div>
   );
 }

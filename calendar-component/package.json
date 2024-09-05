@@ -10,6 +10,7 @@
     "@types/node": "^16.18.61",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
+    "ahooks": "^3.8.1",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
@@ -41,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
   }
 }
