@@ -5,9 +5,11 @@ import Header from './Header';
 import { CSSProperties, ReactNode, useState } from 'react';
 import cs from 'classnames';
 import LocaleContext from './LocaleContext';
+import { useControllableValue } from 'ahooks';
 
 export interface CalendarProps {
-    value: Dayjs;
+    value?: Dayjs;
+    defaultValue?: Dayjs;
     style?: CSSProperties;
     className?: string | string[];
     // 定制日期显示，会完全覆盖日期单元格
@@ -29,9 +31,11 @@ function Calendar(props: CalendarProps) {
         onChange
     } = props;
 
-    const [curValue, setCurValue] = useState<Dayjs>(value);
+    const [curValue, setCurValue] = useControllableValue<Dayjs>(props, {
+        defaultValue: dayjs()
+    });
 
-    const [curMonth, setCurMonth] = useState<Dayjs>(value);
+    const [curMonth, setCurMonth] = useState<Dayjs>(curValue);
 
     const classNames = cs("calendar", className);
 
