@@ -4,3 +4,6 @@
 yarn-*
 *-lock.yaml
 *.lock
+
+node_modules/
+dist/
