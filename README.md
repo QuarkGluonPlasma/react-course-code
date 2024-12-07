@@ -84,6 +84,8 @@
 
 [React 组件库构建并发布 npm 仓库](./guang-components/)
 
+[ Rollup 打包  React 组件库](./guang-components-rollup/)
+
 [对比 webpack 学习 Rollup](./rollup-test/)
 
 [低代码编辑器](./lowcode-editor/)
