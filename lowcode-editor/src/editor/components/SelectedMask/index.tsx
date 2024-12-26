@@ -108,44 +108,46 @@ function SelectedMask({ containerClassName, portalWrapperClassName, componentId 
 
   }, [curComponent]);
 
-  return createPortal((
-    <>
-      <div
-        style={{
-          position: "absolute",
-          left: position.left,
-          top: position.top,
-          backgroundColor: "rgba(0, 0, 255, 0.1)",
-          border: "1px dashed blue",
-          pointerEvents: "none",
-          width: position.width,
-          height: position.height,
-          zIndex: 12,
-          borderRadius: 4,
-          boxSizing: 'border-box',
-        }}
-      />
-      <div
+  return (
+    el &&
+    createPortal(
+      <>
+        <div
           style={{
-            position: "absolute",
+            position: 'absolute',
+            left: position.left,
+            top: position.top,
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            border: '1px dashed blue',
+            pointerEvents: 'none',
+            width: position.width,
+            height: position.height,
+            zIndex: 12,
+            borderRadius: 4,
+            boxSizing: 'border-box',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
             left: position.labelLeft,
             top: position.labelTop,
-            fontSize: "14px",
+            fontSize: '14px',
             zIndex: 13,
-            display: (!position.width || position.width < 10) ? "none" : "inline",
+            display: !position.width || position.width < 10 ? 'none' : 'inline',
             transform: 'translate(-100%, -100%)',
           }}
         >
           <Space>
             <Dropdown
               menu={{
-                items: parentComponents.map(item => ({
+                items: parentComponents.map((item) => ({
                   key: item.id,
                   label: item.desc,
                 })),
                 onClick: ({ key }) => {
                   setCurComponentId(+key);
-                }
+                },
               }}
               disabled={parentComponents.length === 0}
             >
@@ -155,7 +157,7 @@ function SelectedMask({ containerClassName, portalWrapperClassName, componentId 
                   backgroundColor: 'blue',
                   borderRadius: 4,
                   color: '#fff',
-                  cursor: "pointer",
+                  cursor: 'pointer',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -170,14 +172,16 @@ function SelectedMask({ containerClassName, portalWrapperClassName, componentId 
                   cancelText={'取消'}
                   onConfirm={handleDelete}
                 >
-                  <DeleteOutlined style={{ color: '#fff' }}/>
+                  <DeleteOutlined style={{ color: '#fff' }} />
                 </Popconfirm>
               </div>
             )}
           </Space>
         </div>
-    </>
-  ), el)
+      </>,
+      el
+    )
+  );
 }
 
 export default SelectedMask;
