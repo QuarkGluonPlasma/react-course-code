@@ -76,9 +76,15 @@ function SelectedMask({ containerClassName, portalWrapperClassName, componentId 
     });
   }
 
-  const el = useMemo(() => {
-      return document.querySelector(`.${portalWrapperClassName}`)!
-  }, []);
+  const [el, setEl] = useState(
+    document.querySelector(`.${portalWrapperClassName}`)
+  );
+
+  useEffect(() => {
+    if (!el) {
+      setEl(document.querySelector(`.${portalWrapperClassName}`));
+    }
+  });
 
   const curSelectedComponent = useMemo(() => {
     return getComponentById(componentId, components);
