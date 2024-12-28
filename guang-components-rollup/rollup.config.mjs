@@ -20,7 +20,11 @@ export default {
         {
             file: 'dist/umd.js',
             name: 'Guang',
-            format: "umd"
+            format: "umd",
+            globals: {
+                'react': 'React',
+                'react-dom': 'ReactDOM'
+            }
         }
     ],
     plugins: [
