@@ -96,8 +96,7 @@
 
 [AudioContext 在线钢琴](./online-piano/)
 
+[Three.js 快速入门](./hello-threejs/)
 
-
-
-
+[3D 场景如何加载外部模型](./threejs-model/)
 

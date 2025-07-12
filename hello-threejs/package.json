@@ -1,0 +1,18 @@
+{
+  "name": "hello-threejs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/three": "^0.178.1",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "three": "^0.178.0"
+  }
+}
