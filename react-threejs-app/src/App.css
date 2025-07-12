@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+#header {
+  height: 80px;
+  font-size: 32px;
+  line-height: 80px;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  padding-left: 20px;
+}
+#main {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 80px);
+}
+#content {
+  width: 1000px;
+  border-right: 1px solid #000;
+}
+#operate {
+}
+#operate button{
+  margin: 10px;
+  padding: 10px;
+}
