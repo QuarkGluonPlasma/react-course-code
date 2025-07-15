@@ -102,4 +102,6 @@
 
 [React 如何结合 Three.js 开发 3D 项目？](./react-threejs-app/)
 
+[react-three-fiber：组件化开发 3D 项目](./hello-r3f)
+
 [在线 T 恤设计](./react-3d-tshirt-design/)
