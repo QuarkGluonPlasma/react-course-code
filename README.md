@@ -2,6 +2,8 @@
 
 掘金小册[《React 通关秘籍》](https://juejin.cn/book/7294082310658326565)案例代码
 
+后续更多内容关注 #神光的幸福生活 公众号
+
 [一网打尽常用 React Hooks](./hook-test/)
 
 [闭包陷阱的成因和解决方案](./closure-trap/)
@@ -101,5 +103,7 @@
 [3D 场景如何加载外部模型](./threejs-model/)
 
 [React 如何结合 Three.js 开发 3D 项目？](./react-threejs-app/)
+
+[react-three-fiber：组件化开发 3D 项目](./hello-r3f)
 
 [在线 T 恤设计](./react-3d-tshirt-design/)
